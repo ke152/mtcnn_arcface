@@ -55,13 +55,6 @@ DFace主要有两大模块，人脸检测和人脸识别。我会提供所有模
 git clone https://github.com/kuaikuaikim/DFace.git
 ```
 
-在这里我提供了一个anaconda的环境依赖文件environment.yml （windows请用environment-win64.yml），它能方便你构建自己的虚拟环境。
-
-```shell
-cd dface  
-
-conda env create -f environment.yml
-```
 
 添加python搜索模块路径  
 
@@ -146,7 +139,7 @@ python dface/train_net/train_o_net.py
 
 #### 测试人脸检测
 ```shell
-python test_image.py
+python test_image2.py
 ```    
 
 ### 人脸对比  
@@ -155,23 +148,4 @@ python test_image.py
 
 ##　测试效果  
 ![mtcnn](http://affluent.oss-cn-hangzhou.aliyuncs.com/html/images/dface_demoall.PNG)  
-
-
-### QQ交流群(模型获取请加群)  
-
-#### 681403076 
- 
-![](http://affluent.oss-cn-hangzhou.aliyuncs.com/html/images/dfaceqqsm.png)
-
-#### 本人微信  
-
-##### jinkuaikuai005  
-
-![](http://affluent.oss-cn-hangzhou.aliyuncs.com/html/images/perqr.jpg)  
-
-
-
-## License
-
-[Apache License 2.0](LICENSE)
 

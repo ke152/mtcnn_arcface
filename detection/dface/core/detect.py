@@ -3,9 +3,9 @@ import time
 import numpy as np
 import torch
 from torch.autograd.variable import Variable
-from dface.core.models import PNet,RNet,ONet
-import dface.core.utils as utils
-import dface.core.image_tools as image_tools
+from .models import PNet, RNet, ONet
+from . import utils as utils
+from . import image_tools as image_tools
 
 
 def create_mtcnn_net(p_model_path=None, r_model_path=None, o_model_path=None, use_cuda=True):
