@@ -9,11 +9,24 @@ class FaceDetection:
         self.mtcnn_detector = MtcnnDetector(pnet=pnet, rnet=rnet, onet=onet, min_face_size=24)
 
     def infer(self, img):
-        img = cv2.resize(img, (512,512))
-        img_bg = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        #b, g, r = cv2.split(img)
-        #img2 = cv2.merge([r, g, b])
-
-        bboxs, landmarks = self.mtcnn_detector.detect_face(img)
+        new_img, ratio = self.resize(img)
+        bboxs, landmarks = self.mtcnn_detector.detect_face(new_img)
+        bboxs = bboxs / ratio
+        landmarks = landmarks / ratio
         return bboxs, landmarks
+
+    def resize(self, img, dst_size=1080):
+        h, w = img.shape[:2]
+
+        if w > h:
+            ratio = dst_size / w
+            new_w = dst_size
+            new_h = int(h * ratio)
+        else:
+            ratio = dst_size / h
+            new_h = dst_size
+            new_w = int(w * ratio)
+
+        new_img = cv2.resize(img, (new_w, new_h))
+        return new_img, ratio
 

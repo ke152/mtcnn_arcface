@@ -600,7 +600,7 @@ face candidates:%d, current batch_size:%d"%(num_boxes, batch_size)
         """Detect face over image
         """
         boxes_align = np.array([])
-        landmark_align =np.array([])
+        landmark_align = np.array([])
 
         t = time.time()
 
